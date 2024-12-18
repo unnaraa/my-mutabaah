@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+
+/* navbar */
+.navbar {
+  background-color: #7cc5b753;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar-center {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  color: rgb(5, 6, 8);
+  text-decoration: none;
+  padding: 10px 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color:#3d484694;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  /* z-index: 1; */
+}
+.dropdown-content a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #575757;
+}
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar-center, .navbar-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar a {
+    padding: 10px 0;
+    width: 100%;
+    text-align: left;
+  }
+  .navbar-right {
+    width: 100%;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+/* HOME */
+.home {
+    width: 100%;
+    height: 800px;
+    font-family: "Poppins", serif;
+  color: white;
+
+  }
+.home .content {
+  text-align: center;
+  justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.home .content h1 {
+    font-size: 72px;
+    margin: 0;
+    color: #001524;
+    font-weight: bolder;
+  text-shadow: 1px 1px 1px black, 5px 5px 25px rgb(123, 123, 173), 0 0 1px rgb(72, 72, 116);
+}
+.home .content p {
+    font-size: 18px;
+    margin: 20px 0;
+    color: #1F1717;
+    font-weight: bolder;
+}
+.btn {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40b3a2;
+    min-width: 200px;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .btn:hover {
+    opacity: 0.95;
+    background-color: #6fbbb0;
+  }
+  .btn .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+  }
+  @keyframes ripple {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(255, 255, 255, 0.1),
+        0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+    100% {
+      box-shadow:
+        0 0 0 20px rgba(255, 255, 255, 0.1),
+        0 0 0 40px rgba(255, 255, 255, 0.1),
+        0 0 0 60px rgba(255, 255, 255, 0.1),
+        0 0 0 80px rgba(255, 255, 255, 0);
+    }
+  }
+  
+
+/* About */
+.about-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  margin-top: 50px;
+  gap: 90px; /* Mengatur jarak teks dan gambar */
+  background-color: #f8f9fa;
+}
+.about-content {
+  flex: 1 1 50%;
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  text-align: justify;
+}
+.about-content h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #001524;
+}
+.about-content p {
+  font-size: 1.2em;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #555;
+}
+.about-image img {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  animation: float 2.5s ease-in-out infinite;
+  -webkit-animation: float 2.5s ease-in-out infinite;
+}
+/* Supaya section ini responsif */
+@media (max-width: 900px) {
+  .about-section {
+      text-align: center; /* Teks rata tengah */
+  }
+  .about-image img {
+      max-width: 300px; /* Kurangi ukuran untuk layar kecil */
+  }
+}
+/* Animasi gambar naik turun */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  80% {
+      transform: translateY(-15px);
+  }
+} 
+
+/* fitur */
+.fitur {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f8f9fa;
+}
+.fitur h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+.fitur .features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.fitur .feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+.fitur .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+.fitur .icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #40b3a2;
+}
+.fitur h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+.fitur p {
+  font-size: 1em;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .fitur h2 {
+      font-size: 1.5em;
+  }
+  .fitur .icon {
+      font-size: 2.5rem;
+  }
+  .fitur h3 {
+      font-size: 1.2em;
+  }
+  .fitur p {
+      font-size: 0.9em;
+  }
+}
+
+ /* Card Artikel*/
+ .artikel {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.section-title {
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+.section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  width: 300px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.card-content {
+  padding: 20px;
+}
+.card-subtitle {
+  font-size: 14px;
+  color: #888;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #333;
+}
+.card-button {
+  display: inline-flex;
+  align-items: center;
+  color: #40b3a2;
+  text-decoration: none;
+  font-weight: bold;
+}
+ .card-button i {
+  margin-left: 5px;
+}
+.nav-button {
+  position: absolute;
+  top: 50%; /* Tengah vertikal slider */
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10; /* Tetap di atas semua elemen */
+  transition: background-color 0.3s ease;
+}
+.nav-button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+.nav-button.left {
+  left: 10px; /* Posisi kiri */
+}
+.nav-button.right {
+  right: 10px; /* Posisi kanan */
+}
+.slider {
+  position: relative; /* Supaya tombol bisa menggunakan posisi absolut terhadap slider */
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  padding-bottom: 50px;
+}
+
+/* VIDEOS */
+#video-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-bottom: 50ox;
+}
+
+.section-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  font-family: "Poppins", sans-serif;
+}
+
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+}
+
+.video-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.play-btn {
+  background-color: #40b3a2;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.play-btn:hover {
+  background-color: #358f81;
+}
+
+.video-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.popup-content iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #fff;
+  color: #333;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+iframe {
+  width: 100%;
+  height: 315px;
+}
+
+/* murottal */
+.audio-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.audio-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.audio-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.audio-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.audio-card:hover {
+  transform: scale(1.05);
+}
+
+.audio-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007BFF;
+}
+
+.audio-card p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.audio-card button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.audio-card button:hover {
+  background-color: #0056b3;
+}
+.audio-section .section-description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* Join */
+
+.join-section {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.join-content {
+  max-width: 600px;
+}
+
+.join-content h2 {
+  font-size: 2.5rem;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.join-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.join-btn {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.join-image img {
+  max-width: 400px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .join-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .join-image img {
+      max-width: 300px;
+  }
+}
+
+
+/* .join-us-section {
+  font-family: "Poppins", sans-serif;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 90%;
+}
+
+.join-us-content {
+  max-width: 500px;
+  text-align: center;
+}
+
+.join-us-content h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.join-us-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+.join-btn {
+  background-color: #007BFF;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.join-us-image {
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.join-us-image img {
+  width: 100%;
+  border-radius: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+} */
+
+
+
+/* Footer */
+.footer {
+  background-color: #ffffff; /* Warna hitam untuk footer */
+  color: #000000; /* Warna putih untuk teks */
+  padding: 20px 10px;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #25D366;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.whatsapp-btn:hover {
+  background-color: #20b158;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      gap: 15px;
+  }
+  .whatsapp-btn {
+      width: 80%;
+      text-align: center;
+  }
+}

@@ -1,0 +1,1 @@
+tambah field img di artikel, ubah migration & model, habis itu migrate refresh
