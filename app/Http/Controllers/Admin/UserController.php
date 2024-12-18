@@ -12,29 +12,36 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $users = User::with('mutabaah')->get(); // Ambil semua user beserta data mutabaah mereka
 
-    $users->map(function ($user) {
-        // Periksa apakah user mengisi mutabaah hari ini
-        $today = Carbon::today();
-        $hasMutabaahToday = $user->mutabaah->where('tanggal', $today)->count() > 0;
+        $users->map(function ($user) {
+            // Periksa apakah user mengisi mutabaah hari ini
+            $today = Carbon::today();
+            $hasMutabaahToday = $user->mutabaah->where('tanggal', $today)->count() > 0;
 
-        // Tentukan status berdasarkan pengisian hari ini
-        $user->status = $hasMutabaahToday ? 'Active' : 'Non-Active';
-        return $user;
-    });
+            // Tentukan status berdasarkan pengisian hari ini
+            $user->status = $hasMutabaahToday ? 'Active' : 'Non-Active';
+            return $user;
+        });
         return view('admin.datauser.index', compact('users'));
     }
-    public function detail($id){
+    public function detail($id)
+    {
         $biodata = Biodata::where('user_id', $id)->get(); // Ambil user berdasarkan ID
-        return view('admin.datauser.profile', compact ('biodata'));
+        return view('admin.datauser.profile', compact('biodata'));
     }
     public function mutabaah($id)
-{
-    $mutabaah = Mutabaah::where('user_id', $id)->get(); // Ambil semua data berdasarkan user_id
-    $biodata = User::find($id); // Ambil data user berdasarkan ID
-    return view('admin.datauser.mutabaahUser', compact('mutabaah', 'biodata'));
-}
-
+    {
+        $mutabaah = Mutabaah::where('user_id', $id)->get(); // Ambil semua data berdasarkan user_id
+        $biodata = User::find($id); // Ambil data user berdasarkan ID
+        return view('admin.datauser.mutabaahUser', compact('mutabaah', 'biodata'));
+    }
+    public function destroyMutabaah(Mutabaah $mutabaah)
+    {
+        $userId = $mutabaah->user_id; 
+        $mutabaah->delete();
+        return redirect()->route('data.user.mutabaah', ['id' => $userId]);
+    }
 }

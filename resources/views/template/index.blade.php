@@ -13,6 +13,8 @@
     
 
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <link rel="stylesheet" href="{{ asset('assets/compiled/css/app.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/compiled/css/app-dark.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/compiled/css/iconly.css') }}">

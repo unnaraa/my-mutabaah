@@ -31,8 +31,8 @@ class MutabaahController extends Controller
     {
         // Logika untuk menangani data berdasarkan slug
         $filter_status = $request->input('filter_status');
-        $form = Mutabaah::where('user_id', auth()->id())
-            ->when($filter_status, function ($query, $status) {
+        $form = Mutabaah::where('user_id', Auth::user()->id)            
+        ->when($filter_status, function ($query, $status) {
                 return $query->where('status', $status);
             })
             ->get();

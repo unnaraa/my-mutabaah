@@ -34,7 +34,7 @@
             <h5 class="card-title">
                 Artikel
             </h5>
-            <a href="{{ route('form.artikel') }}" class="btn btn-outline-light rounded-pill">+ Artikel</a>
+            <a href="{{ route('form.artikel') }}" class="btn btn-outline-light rounded-pill ">+ Artikel</a>
         </div>
         
         

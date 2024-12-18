@@ -83,77 +83,61 @@
 </head>
 <body>
     <div class="profile-container">
-        @foreach ($biodata as $profile)
 
+        @if ($biodata)
         <div class="profile-header">
-            <img src="https://storage.googleapis.com/a1aa/image/St50DzzeRMUeo0352uQYsIFcfXTTDE6lIUcEQ48aO4G8SeVPB.jpg" alt="Profile Picture">
-            <h2>{{ $profile->nama_lengkap }}</h2>
-            <p>johndoe@example.com</p>
+            <img src="{{ asset('storage/' . $biodata->foto) }}" alt="Profile Picture">
+            {{-- <h2>{{ $profile->nama_lengkap }}</h2>
+            <p>{{ $profile->user->email }}</p> --}}
         </div>
         <div class="profile-info">
+        {{-- @foreach ($biodata as $profile) --}}
             <div class="info-item">
                 <span class="info-label">Nama Lengkap:</span>
-                <span class="info-value">{{ $profile->nama_lengkap }}</span>
+                <span class="info-value">{{ $biodata->nama_lengkap }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Tempat Lahir:</span>
-                <span class="info-value">{{ $profile->tempat_lahir }}</span>
+                <span class="info-value">{{ $biodata->tempat_lahir }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Tanggal Lahir:</span>
-                <span class="info-value">{{ $profile->tanggal_lahir }}</span>
+                <span class="info-value">{{ $biodata->tanggal_lahir }}</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Umur:</span>
-                <span class="info-value">{{ $profile->umur }}</span>
+                <span class="info-value">{{ $biodata->umur }}</span>
             </div>
+            <div class="info-item">
+                <span class="info-label">Alamat :</span>
+                <span class="info-value">{{ $biodata->alamat }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">No. Telp :</span>
+                <span class="info-value">{{ $biodata->nomor_hp }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Nama Ayah :</span>
+                <span class="info-value">{{ $biodata->nama_ayah }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Nama Ibu :</span>
+                <span class="info-value">{{ $biodata->nama_ibu }}</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Kelas :</span>
+                <span class="info-value">{{ $biodata->kelas }}</span>
+            </div>
+{{-- @endforeach --}}
+
         </div>
         <div class="edit-profile">
             <a href="{{ route('form.profile') }}">Edit Profile</a>
         </div>
+        @else
+        <p>Data biodata tidak ditemukan.</p>
+    @endif
     </div>
-
 </body>
 </html>
-
-
-
-{{-- <div class="profile-container">
-    <div class="profile-info">
-        @foreach ($biodata as $profile)
-            <div class="info-item">
-                <span class="info-label">Nama Lengkap:</span>
-                <span class="info-value">{{ $profile->nama_lengkap }}</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Tempat Lahir:</span>
-                <span class="info-value">{{ $profile->tempat_lahir }}</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Tanggal Lahir:</span>
-                <span class="info-value">{{ $profile->tanggal_lahir }}</span>
-            </div>
-            <div class="info-item">
-                <span class="info-label">Umur:</span>
-                <span class="info-value">{{ $profile->umur }}</span>
-            </div>
-        @endforeach
-    </div>
-    <div class="edit-profile">
-        <a href="{{ route('form.profile') }}">Edit Profile</a>
-    </div>
-</div> --}}
 @endsection
-
-{{-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bisaa Aamiin</title>
-</head>
-<body>
-    <h1>OIieeieie</h1>
-</body>
-</html> --}}

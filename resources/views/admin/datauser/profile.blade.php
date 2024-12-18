@@ -25,6 +25,7 @@
                         <h2>Profil Pengguna: {{ $data->nama_lengkap }}</h2>
                         <div class="card">
                             <div class="card-body">
+                                <img src="{{ asset('storage/' . $data->foto) }}" alt="Profile Picture" style="width: 120px; height: 120px; border-radius: 10%; margin-bottom: 15px;">
                                 <p><strong>Alamat :</strong> {{ $data->alamat }}</p>
                                 <p><strong>Tempat Lahir :</strong> {{ $data->tempat_lahir }}</p>
                                 <p><strong>Tanggal Lahir :</strong> {{ $data->tanggal_lahir }}</p>

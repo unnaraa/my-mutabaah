@@ -12,11 +12,15 @@
 </head>
 
 <body>
-
     <nav>
         <div class="navbar">
             <img alt="Company logo" height="70" src="{{ asset('front/IMG/logo.png') }}" width="70" />
-            <div class="navbar-center">
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="navbar-center" id="menu">
                 <a href="#">HOME</a>
                 <a href="#">TENTANG</a>
                 <div class="dropdown">
@@ -31,7 +35,6 @@
             </div>
             <div class="navbar-right">
                 @guest
-                    <!-- Dropdown untuk tamu -->
                     <div class="dropdown">
                         <img 
                             alt="Profile logo" 
@@ -50,7 +53,6 @@
                 @endguest
     
                 @auth
-                    <!-- Dropdown untuk pengguna login -->
                     <div class="dropdown">
                         <img 
                             alt="Profile logo" 
@@ -64,12 +66,8 @@
                         <a>{{ Auth::user()->name }}</a>
                         <div id="user-dropdown" class="dropdown-content" style="display: none;">
                             <a href="{{ route('mutabaah') }}">Profile</a>
-                            {{-- <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
-                                @csrf
-                                <button type="submit" style="cursor: pointer; text-align: right;">Logout</button>
-                            </form> --}}
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <i class="fas fa-sign-out-alt"></i>
+                                Logout
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
@@ -80,6 +78,7 @@
             </div>
         </div>
     </nav>
+    
     
 
     <!-- Home -->

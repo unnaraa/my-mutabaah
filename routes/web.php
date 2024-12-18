@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\BaseController;
+use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\FrontController;
@@ -24,12 +26,25 @@ Auth::routes();
 Route::prefix('Admin')->middleware(['auth', 'isAdmin'])->group(function(){
     Route::controller(BaseController::class)->group(function(){
         Route::get('/dashboard', 'index')->name('dashboard');
+        Route::get('/dashboard/chart', 'chart')->name('chart');
         // Route::get('/dashboard/data-user', 'dataUser')->name('data.user');
+    });
+    Route::controller(ReviewController::class)->group(function(){
+        Route::get('/dashboard/review{id}', 'index')->name('data.review');
+        Route::post('/dashboard/create-review', 'store')->name('create.review');
+        Route::delete('/dashboard/review/{id}', 'destroy')->name('delete.review');
+    });
+    Route::controller(LaporanController::class)->group(function(){
+        Route::get('/dashboard/laporan', 'index')->name('data.laporan');
+        Route::get('/dashboard/form-laporan', 'create')->name('form.laporan');
+        Route::post('/dashboard/create-laporan', 'store')->name('create.laporan');
+        Route::delete('/laporan/{id}', 'destroy')->name('laporan.destroy');
     });
     Route::controller(UserController::class)->group(function(){
         Route::get('/dashboard/data-user', 'index')->name('data.user');
         Route::get('/dashboard/data-user/detail/{id}', 'detail')->name('data.user.detail');
         Route::get('/dashboard/data-user/mutabaah/{id}', 'mutabaah')->name('data.user.mutabaah');
+        Route::delete('/dashboard/data-user/mutabaah/{mutabaah}', 'destroyMutabaah')->name('data.user.mutabaah.delete');
     });
     Route::controller(ArtikelController::class)->group(function(){
         Route::get('/dashboard/artikel', 'index')->name('artikel');
@@ -59,10 +74,15 @@ Route::middleware(['auth', 'isUser'])->group(function(){
     Route::controller(ProfileController::class)->group(function(){
         Route::get('/mymutabaah/profile', 'profileUser')->name('profile.user');
         Route::get('/mymutabaah/form/profile', 'formProfile')->name('form.profile');
+        Route::get('/mymutabaah/edit/profile/{id}', 'formEditProfile')->name('form.edit.profile');
+        Route::put('/mymutabaah/update/profile/{id}', 'UpdateProfile')->name('update.profile');
         Route::post('/daftar/mymutabaah', 'daftarMutabaah')->name('daftar.mutabaah');
+        
+        Route::get('/hai', 'thxU')->name('thx.u');
     });
     Route::controller(HomeController::class)->group(function(){
         Route::get('/mymutabaah/home', 'homeUser')->name('home.user');
+        Route::get('/mymutabaah/laporan', 'laporanUser')->name('laporan.user');
     });
 }); 
 
