@@ -536,24 +536,6 @@
     </footer>
     
 
-    {{-- <script>
-        const searchBar = document.getElementById('search-bar');
-        const trackList = document.getElementById('track-list');
-        const tracks = trackList.querySelectorAll('li');
-
-        // Fungsi untuk menangani pencarian
-        searchBar.addEventListener('input', function() {
-            const query = this.value.toLowerCase(); // Ambil input pencarian dan ubah ke lowercase
-            tracks.forEach(track => {
-                const trackName = track.querySelector('span').textContent.toLowerCase();
-                if (trackName.includes(query)) {
-                    track.style.display = 'flex'; // Tampilkan track yang sesuai dengan query
-                } else {
-                    track.style.display = 'none'; // Sembunyikan track yang tidak sesuai dengan query
-                }
-            });
-        });
-    </script> --}}
     <script>
         const playButton = document.getElementById('play');
         const prevButton = document.getElementById('prev');

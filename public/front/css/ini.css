@@ -4,11 +4,11 @@
 
 /* navbar */
 .navbar {
-  background-color: #7cc5b753;
+  background-color: #7cc5b6;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 29px;
   position: fixed;
   width: 100%;
   z-index: 1000;
@@ -45,6 +45,7 @@
 .dropdown-content {
   display: none;
   position: absolute;
+  padding-right: 30px;
   background-color: #3d484694;
   min-width: 150px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -141,7 +142,7 @@
     margin: 0;
     color: #001524;
     font-weight: bolder;
-  text-shadow: 1px 1px 1px black, 5px 5px 25px rgb(123, 123, 173), 0 0 1px rgb(72, 72, 116);
+  /* text-shadow: 1px 1px 1px black, 5px 5px 25px rgb(123, 123, 173), 0 0 1px rgb(72, 72, 116); */
 }
 .home .content p {
     font-size: 18px;
@@ -149,52 +150,6 @@
     color: #1F1717;
     font-weight: bolder;
 }
-.btn {
-    outline: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #40b3a2;
-    min-width: 200px;
-    border: 0;
-    border-radius: 30px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-    padding: 16px 20px;
-    color: #fff;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.5s;
-  }
-  .btn:hover {
-    opacity: 0.95;
-    background-color: #6fbbb0;
-  }
-  .btn .animation {
-    border-radius: 100%;
-    animation: ripple 0.6s linear infinite;
-  }
-  @keyframes ripple {
-    0% {
-      box-shadow:
-        0 0 0 0 rgba(255, 255, 255, 0.1),
-        0 0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 0 40px rgba(255, 255, 255, 0.1),
-        0 0 0 60px rgba(255, 255, 255, 0.1);
-    }
-    100% {
-      box-shadow:
-        0 0 0 20px rgba(255, 255, 255, 0.1),
-        0 0 0 40px rgba(255, 255, 255, 0.1),
-        0 0 0 60px rgba(255, 255, 255, 0.1),
-        0 0 0 80px rgba(255, 255, 255, 0);
-    }
-  }
-  
 
 /* About */
 .about-section {

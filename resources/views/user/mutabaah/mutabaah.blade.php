@@ -133,6 +133,7 @@
                     <th>Status</th>
                     <th>Deskripsi</th>
                     <th>Respon</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -147,6 +148,15 @@
                     <td>{{ $row->status }}</td>
                     <td>{{ $row->desc }}</td>
                     <td>{{ $row->ripiu ? $row->ripiu->respon : 'Belum ada respon' }}</td>
+                    <td>
+                        <form action="{{ route('hapus.mutabaah', $row->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" style="background-color: red;" onclick="return confirm('Are you sure you want to delete this?')">
+                                Hapus
+                            </button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

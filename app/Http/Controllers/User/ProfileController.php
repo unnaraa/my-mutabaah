@@ -16,16 +16,6 @@ class ProfileController extends Controller
     $biodata = Biodata::where('user_id', Auth::id())->first();
     return view('user.profile.profile', compact('biodata'));
 }
-
-
-    // public function profileUser()
-    // {
-    //     // Ambil data biodata berdasarkan user yang sedang login
-    //     $biodata = Biodata::where('user_id', Auth::id())->first();
-    
-    //     // Kirim data ke view
-    //     return view('user.profile.profile', compact('biodata'));
-    // }
     public function formProfile(){
     return view('user.profile.daftar');
     }

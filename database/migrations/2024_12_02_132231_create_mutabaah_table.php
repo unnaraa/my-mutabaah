@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('mutabaah', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('tanggal'); 
             $table->foreignId('surah_id')->constrained('surah');  
             $table->integer('ayat_mulai');

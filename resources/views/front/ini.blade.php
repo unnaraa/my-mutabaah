@@ -1,4 +1,3 @@
-{{-- {{ dd($videop) }} --}}
 
 <html>
 <head>
@@ -27,8 +26,8 @@
                     <a class="dropbtn" href="#">FITUR</a>
                     <div class="dropdown-content">
                         <a href="{{ route('myartikel') }}">ARTIKEL</a>
-                        <a href="#">VIDEO</a>
-                        <a href="{{ route('mymurottal')}}">MUROTTAL</a>
+                        <a href="{{ route('videos') }}">VIDEO</a>
+                        <a href="{{ route('mymurottal') }}">MUROTTAL</a>
                     </div>
                 </div>
                 <a href="#">KONTAK</a>
@@ -78,8 +77,6 @@
             </div>
         </div>
     </nav>
-    
-    
 
     <!-- Home -->
     <section id="home" class="home">
@@ -157,17 +154,17 @@
                 <div class="card">
                     <img alt="" src="https://i.pinimg.com/736x/df/25/98/df2598a479cc55a9dba6076860bffa90.jpg" />
                     <div class="card-content">
-                        <div class="card-subtitle">.com</div>
-                        <div class="card-title">Inilah Keutamaan Luar Biasa Penghafal Al-Qur’an</div>
-                        <a class="card-button" href="https://rumaysho.com/37174-inilah-keutamaan-luar-biasa-penghafal-al-quran-di-surga.html">Baca<i class="fas fa-arrow-right"></i></a>
+                        <div class="card-subtitle">Rumaysho.com</div>
+                        <div class="card-title">Hafalan Al-Qur’an itu Cepat Hilang, Ini Cara Menjaganya </div>
+                        <a class="card-button" href="https://rumaysho.com/37249-hafalan-al-quran-itu-cepat-hilang-ini-cara-menjaganya.html">Baca<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
                     <img alt="" src="https://i.pinimg.com/736x/a8/24/2d/a8242dbbaf9c77ed161ea195265dcb0f.jpg" />
                     <div class="card-content">
                         <div class="card-subtitle">Rumaysho.com</div>
-                        <div class="card-title">Inilah Keutamaan Luar Biasa Penghafal Al-Qur’an</div>
-                        <a class="card-button" href="https://rumaysho.com/37174-inilah-keutamaan-luar-biasa-penghafal-al-quran-di-surga.html">Baca<i class="fas fa-arrow-right"></i></a>
+                        <div class="card-title">Mendahulukan Menghafal Al Qur’an ataukah Menuntut Ilmu?</div>
+                        <a class="card-button" href="https://rumaysho.com/2791-mendahulukan-menghafal-al-quran-ataukah-menuntut-ilmu.html">Baca<i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="card">
@@ -197,27 +194,6 @@
         </a>
         </div>
     </section>
-    
-{{-- <section class="section">
-    <div class="container py-5">
-        <h2 class="text-center">Artikel Pilihan</h2>
-        <div class="row">
-            @foreach($artikel as $item)
-                <div class="col-md-4 mb-4">
-                    <div class="card">
-                        <img src="{{ asset('storage/'.$item->img) }}" class="card-img-top" alt="{{ $item->judul }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->judul }}</h5>
-                            <p class="card-text">{{ \Str::limit($item->konten, 100) }}</p>
-                            <a href="{{ route('artikel.show', $item->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-    </div>
-</section> --}}
-
 
     <!-- VIDEO -->
     <section id="video-section">
@@ -242,16 +218,7 @@
             <button class="play-btn">Tonton</button>
         </div>
         </div>
-        {{-- <div class="video-grid">
-            @foreach ($videop as $video)
-            <div class="video-card" data-video="{{ $video->link }}">
-                <img src="{{ $video->img }}" alt="Video Thumbnail" />
-                <h3>{{ $video->judul }}</h3>
-                <button class="play-btn">Tonton</button>
-            </div>
-            @endforeach
-        </div> --}}
-        
+ 
         <!-- Popup for Video -->
         <div class="video-popup" id="videoPopup">
             <div class="popup-content">
@@ -309,9 +276,7 @@
         <div class="join-image">
             <img src="{{ asset('front/IMG/alquran-bg-removebg-preview.png') }}" alt="" />
         </div>
-    </section>
-    
-    
+    </section> 
 
     <!-- Footer -->
     <footer class="footer">
@@ -327,7 +292,6 @@
         </div>
     </footer>
     
-
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="{{ asset('front/JS/ini.js') }}"></script>
 

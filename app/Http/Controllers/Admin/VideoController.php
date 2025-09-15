@@ -42,7 +42,7 @@ class VideoController extends Controller
         public function update(Request $request, $id){
                     $videos = Video::findOrFail($id);
     
-                        $videos->update([
+                        $videos->update([ 
                             'judul' => $request->judul,
                             'link' => $request->link,
                             'img' => $request->img,

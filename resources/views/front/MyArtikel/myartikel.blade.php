@@ -82,7 +82,7 @@
 
 <!-- Filter Kategori -->
 <div class="container py-4">
-    <div class="mb-3">
+    <div class="mb-0">
         <select id="kategori" class="form-select">
             <option value="">Semua Kategori</option>
             @foreach ($kategoris as $kategori)
@@ -94,13 +94,12 @@
 
     <!-- Search Bar -->
 <div class="container py-4">
-    <div class="mb-3">
+    <div class="mt-0">
         <input type="text" id="search" class="form-control" placeholder="Cari artikel..." aria-label="Search">
     </div>
 </div>
    <!-- Content -->
 <div class="container py-4">
-    {{-- <h4 class="mb-3">Keutamaan Menghafal Qur'an</h4> --}}
     <div id="artikel-container" class="scroll-container">
         @foreach ($artikels as $myartikel)
         <a href="{{ $myartikel->link }}" target="_blank">
@@ -186,7 +185,6 @@
                 .catch(error => console.error('Error:', error));
         });
     </script>
-    
     
 </body>
 </html>
