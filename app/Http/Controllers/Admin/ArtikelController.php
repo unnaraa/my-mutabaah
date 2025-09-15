@@ -50,8 +50,7 @@ class ArtikelController extends Controller
                             'judul' => $request->judul,
                             'kategori' => $request->kategori,
                             'link' => $request->link,
-                            'img' => $request->file(key: 'img')->store('img-artikel
-                            '),
+                            'img' => $request->file(key: 'img')->store('img-artikel'),
                         ]);
                     
                     return redirect()->route('artikel')->with('Sukses', 'Artikel berhasil diubah');

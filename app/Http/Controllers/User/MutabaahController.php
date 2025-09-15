@@ -63,7 +63,12 @@ class MutabaahController extends Controller
             'slug' => Str::slug($request->user_id),
 
          ]);
-         return redirect()->back();
+         return redirect()->route('mutabaah');
          }    
-        
+
+         public function hapusMutabaah(Mutabaah $mutabaah){
+        $userId = $mutabaah->user_id; 
+        $mutabaah->delete();
+        return redirect()->back();
+        }
 }

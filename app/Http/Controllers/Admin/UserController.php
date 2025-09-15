@@ -44,4 +44,11 @@ class UserController extends Controller
         $mutabaah->delete();
         return redirect()->route('data.user.mutabaah', ['id' => $userId]);
     }
+    public function hapusUser($id)
+{
+    $user = User::findOrFail($id);
+    $user->delete();
+
+    return redirect()->back()->with('success', 'Data User berhasil dihapus.');
+}
 }

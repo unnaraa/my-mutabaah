@@ -49,8 +49,4 @@ class BaseController extends Controller
             'values' => $values,
         ]);
     }
-
-    // public function dataUser(){
-    //     return view('admin.datauser.index');
-    // }  
 }

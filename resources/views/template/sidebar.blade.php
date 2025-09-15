@@ -2,9 +2,6 @@
     <div class="sidebar-wrapper active">
         <div class="sidebar-header position-relative">
             <div class="d-flex justify-content-between align-items-center">
-                {{-- <div class="logo">
-                    <a href="{{route('mymutabaah')}}"></a>
-                </div> --}}
                 <div class="theme-toggle d-flex gap-2  align-items-center mt-2">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                         aria-hidden="true" role="img" class="iconify iconify--system-uicons" width="20"
@@ -50,12 +47,22 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
-                <li class="sidebar-item ">
-                    <a href="{{ route('data.laporan') }}" class='sidebar-link'>
+                
+                <li class="sidebar-item  has-sub">
+                    <a href="#" class='sidebar-link'>
                         <i class="bi bi-stack"></i>
-                        <span>Laporan</span>
+                        <span>Menu</span>
                     </a>
+                    <ul class="submenu ">
+                        <li class="submenu-item  ">
+                            <a href="{{ route('artikel') }}" class="submenu-link">Kelola Artikel</a>
+                        </li>
+                        <li class="submenu-item  ">
+                            <a href="{{ route('videos.index')}}" class="submenu-link">Kelola Video</a>
+                        </li>
+                    </ul>
                 </li>
+
                 <li class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-person"></i>
@@ -67,19 +74,12 @@
                         </li>
                     </ul>
                 </li>
-                <li class="sidebar-item  has-sub">
-                    <a href="#" class='sidebar-link'>
-                        <i class="bi bi-stack"></i>
-                        <span>Menu</span>
+
+                <li class="sidebar-item ">
+                    <a href="{{ route('data.laporan') }}" class='sidebar-link'>
+                        <i class="bi bi-pencil-square"></i>
+                        <span>Laporan</span>
                     </a>
-                    <ul class="submenu ">
-                        <li class="submenu-item  ">
-                            <a href="{{ route('artikel') }}" class="submenu-link">Kelola Artikel</a>
-                        </li>
-                        {{-- <li class="submenu-item  ">
-                            <a href="{{ route('video')}}" class="submenu-link">Kelola Video</a>
-                        </li> --}}
-                    </ul>
                 </li>
             
                 <li class="sidebar-item">
